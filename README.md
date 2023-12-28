@@ -1,2 +1,2 @@
 # TimeGuard
- TimeGuard is a screentime tracking app that enhances productivity. 
+ TimeGuard is a screentime trackingbrowser extension that enhances productivity. 

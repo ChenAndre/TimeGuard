@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>TimeGuard</title>
-    <script src = "savr.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Screen Time monitoring for Chrome, Edge, FireFox</h1>
-    <input>
-    
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TimeGuard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
   <style>
     body {
-      width: 200px;
+      width: 350px;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 10px;
+      background-color: #fff;
+      color: #333;
+    }
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px 5px 0 0;
+      text-align: center;
+    }
+    .content {
+      padding: 15px;
+    }
+    .site-stats {
+      background: #f2f2f2;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .site-stats h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.2em;
+    }
+    .site-stats p {
+      margin: 5px 0;
+    }
+    .focus-section {
+      text-align: center;
+    }
+    button {
+      background-color: #008CBA;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
   </style>
   <script src="popup.js"></script>
 </head>
 <body>
-  <h2>Screen Time Tracker</h2>
-  <p>Total Visits: <span id="totalVisits">0</span></p>
-  <p>Most Visited Site: <span id="mostVisitedSite">None</span></p>
+  <div class="header">
+    <img src="icon48.png" alt="TimeGuard Icon" class="icon">
+    <h1>TimeGuard</h1>
+  </div>
+  <div class="content">
+    <div class="site-stats">
+      <h2>Screen Time Tracker</h2>
+      <p>Total Visits: <span id="totalVisits">0</span></p>
+      <p>Most Visited Site: <span id="mostVisitedSite">None</span></p>
+    </div>
 
-  <!-- New feature: Focus Popup -->
-  <div id="focusPopup" style="display: none;">
-    <p>Are you focused?</p>
-    <button id="yesButton">Yes</button>
-    <button id="noButton">No</button>
+    <!-- New feature: Focus Popup -->
+    <div class="focus-section" id="focusPopup" style="display: none;">
+      <p>Are you focused?</p>
+      <button id="yesButton">Yes, I am!</button>
+      <button id="noButton">Not really</button>
+    </div>
   </div>
 </body>
 </html>
-
-</body>
-</html>
-
-
-

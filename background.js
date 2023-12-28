@@ -20,8 +20,15 @@ chrome.webNavigation.onCompleted.addListener(function(details) {
 
   // Update most visited site in storage
   chrome.storage.local.get('mostVisitedSite', function(data) {
-    const mostVisitedSite = Object.keys(siteData).reduce((a, b) => siteData[a].visits > siteData[b].visits ? a : b, null);
-    chrome.storage.local.set({ mostVisitedSite });
+    // Check if siteData exists and has properties to avoid accessing properties of undefined
+    if(siteData && Object.keys(siteData).length > 0) {
+      const mostVisitedSite = Object.keys(siteData).reduce((a, b) => {
+        const visitsA = siteData[a] ? siteData[a].visits : 0;
+        const visitsB = siteData[b] ? siteData[b].visits : 0;
+        return visitsA > visitsB ? a : b;
+      }, null);
+      chrome.storage.local.set({ mostVisitedSite });
+    }
   });
 });
 
